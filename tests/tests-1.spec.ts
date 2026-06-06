@@ -1,4 +1,4 @@
-import { test } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 test.beforeEach(async ({ page }) => {
     await page.goto('')
@@ -9,12 +9,29 @@ test.beforeEach(async ({ page }) => {
 
 })
 
-test('saucedemo test 1', async ({ page }) => {
+test('should successfully complete the checkout journey for an item in the catalog', async ({ page }) => {
     // add to cart
     await page.locator('.inventory_item')
-    .filter({ hasText: "Sauce Labs Backpack"})
+    .filter({ hasText: "Sauce Labs Onesie"})
     .getByRole('button', { name: 'Add to cart'})
     .click()
 
-    
+    // check cart
+    await page.locator('.shopping_cart_link')
+    .click()
+
+    // Your Cart
+    await page.getByRole('button', {name: 'Checkout'}).click()
+
+    // checkout your information
+    await page.getByRole('textbox', {name: 'First Name'}).fill('Test user first name')
+    await page.getByRole('textbox', {name: 'Last Name'}).fill('Test user last name')
+    await page.getByRole('textbox', {name: 'Zip/Postal Code'}).fill('111111')
+    await page.getByRole('button', {name: 'Continue'}).click()
+
+    // Checkout: Overview
+    await page.getByRole('button', {name: 'Finish'}).click()
+
+    // Checkout: Complete!
+    await expect(page.getByText('Thank you for your order!')).toBeVisible()
 })
