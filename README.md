@@ -1,1 +1,1 @@
-# Test automation framework using Playwright.
+# production-grade test automation framework
