@@ -2,14 +2,14 @@ import { test } from '@playwright/test'
 import { LoginPage } from '../src/pages/LoginPage.page'
 import { ProductsPage } from '../src/pages/ProductsPage.page'
 import { CartPage } from '../src/pages/CartPage.page'
-import { CheckouInformationPage } from '../src/pages/CheckoutInformationPage.page'
+import { CheckoutInformationPage } from '../src/pages/CheckoutInformationPage.page'
 import { OrderInformationPage } from '../src/pages/OrderInformation.page'
 import { OrderConfirmationPage } from '../src/pages/OrderConfirmationPage.page'
 
 let loginPage: LoginPage
 let productsPage: ProductsPage
 let cartPage: CartPage
-let checkoutInformationPage: CheckouInformationPage
+let checkoutInformationPage: CheckoutInformationPage
 let orderInformationPage: OrderInformationPage
 let orderConfirmationPage: OrderConfirmationPage
 
@@ -17,7 +17,7 @@ test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page)
     productsPage = new ProductsPage(page)
     cartPage = new CartPage(page)
-    checkoutInformationPage = new CheckouInformationPage(page)
+    checkoutInformationPage = new CheckoutInformationPage(page)
     orderInformationPage = new OrderInformationPage(page)
     orderConfirmationPage = new OrderConfirmationPage(page)
     await page.goto('')
