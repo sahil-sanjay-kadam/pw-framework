@@ -1,10 +1,10 @@
 import { test } from '@playwright/test'
-import { LoginPage } from '../pages/LoginPage.page'
-import { ProductsPage } from '../pages/ProductsPage.page'
-import { CartPage } from '../pages/CartPage.page'
-import { CheckouInformationPage } from '../pages/CheckoutInformationPage.page'
-import { OrderInformationPage } from '../pages/OrderInformation.page'
-import { OrderConfirmationPage } from '../pages/OrderConfirmationPage.page'
+import { LoginPage } from '../src/pages/LoginPage.page'
+import { ProductsPage } from '../src/pages/ProductsPage.page'
+import { CartPage } from '../src/pages/CartPage.page'
+import { CheckouInformationPage } from '../src/pages/CheckoutInformationPage.page'
+import { OrderInformationPage } from '../src/pages/OrderInformation.page'
+import { OrderConfirmationPage } from '../src/pages/OrderConfirmationPage.page'
 
 let loginPage: LoginPage
 let productsPage: ProductsPage
