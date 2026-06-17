@@ -1,4 +1,4 @@
-import { expect, test } from '../src/fixtures/Base'
+import { test } from '../src/fixtures/Base'
 
 test('using fixtures', async ({ loginPage, productsPage, cartPage, checkoutInformationPage, orderInformationPage, orderConfirmationPage }) => {
     await loginPage.navigateTo()
